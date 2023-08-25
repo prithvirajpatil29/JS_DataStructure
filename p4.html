@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body{
+            background: url(assets/images/background2.jpg) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Check whether the number is palindrome or not.</h1>
+</center>
+<hr>
+<div class="palindrome">
+    <h3>Enter the Number</h3>
+    <input type="text" name="" id="number" required> <br>
+    <input type="submit" onclick="palindrome()">
+    <h3 id="result"></h3>
+</div>
+    <script>
+        function palindrome()
+        {
+                let originalNumber = Number(document.getElementById("number").value);
+                let reversed = 0;
+                let temp = originalNumber; // Store the original number for comparison
+            
+                while (temp !== 0) {
+                    const digit = temp % 10; // Get the last digit of the number
+                    reversed = reversed * 10 + digit; // Append the digit to the reversed number
+                    temp = Math.floor(temp / 10); // Remove the last digit from the original number
+                }
+            
+                if (originalNumber === reversed) {
+                    document.getElementById("result").innerHTML = `${originalNumber} is a palindrome.`;
+                } else {
+                    document.getElementById("result").innerHTML = `${originalNumber} is not a palindrome.`;
+                }
+            
+            
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two largest</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+<style>
+    body{
+        background-color: rgb(61, 62, 61);
+        background-color: #be8c85;
+    }
+</style>
+</head>
+<body>
+    <div class="twolargest">
+    <h3>Greatest of Two Numbes</h3>
+<form>
+   <label for=""> Number 1</label> <br> <input type="number" name="num1" id="num1"><br><br>
+   <label for=""> Number 2</label> <br><input type="number" id="num2"><br><br>
+    <input type="submit" onclick="cal(event)">
+</form>
+    <h3 id="result"></h3>
+</div>
+    <script>
+      
+        function cal(event)
+        {
+            event.preventDefault();
+            let Number1 = Number(document.getElementById("num1").value);
+            let Number2 = Number(document.getElementById("num2").value); 
+            //document.getElementById("result").innerHTML = Number2;
+
+            if(Number1 > Number2){
+                document.getElementById("result").innerHTML = "Number1 that is "+ Number1+" greater than " + Number2;
+            }
+            else if(Number2 > Number1){
+                document.getElementById("result").innerHTML = "Number2 that is "+ Number2+" greater than " + Number1;
+            }
+            else if(Number1==Number2){
+                document.getElementById("result").innerHTML = "Both Numbers are same";
+            }
+        }
+        
+    </script>
+</body>
+</html>

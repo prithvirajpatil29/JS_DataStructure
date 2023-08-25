@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Numbers Greates</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body{
+            background: url(assets/images/image2.webp) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="twolargest threelargest">
+    <h3>Greatest of Three Numbers</h3>
+    <form>
+        <label for="">Number 1</label> <input type="number"  id="num1"><br><br>
+        <label for="">Number 2</label> <input type="number" id="num2"><br><br>
+        <label for="">Number 3</label><input type="number" id="num3"><br><br>
+        <input type="submit" onclick="big(event)">
+    </form>
+    <h3 id="result"></h3>
+</div>
+    <script>
+        function big(event)
+        {
+            event.preventDefault();
+            let firstNumber = Number(document.getElementById("num1").value);
+            let secondNumber = Number(document.getElementById("num2").value); 
+            let thirdNumber = Number(document.getElementById("num3").value);
+            //document.getElementById("result").innerHTML = firstNumber;
+            //document.write(firstNumber);
+
+            if(firstNumber > secondNumber && firstNumber > thirdNumber){
+                document.getElementById("result").innerHTML = "Number1 that is "+ firstNumber+" greater than " + secondNumber + "and " + thirdNumber;
+            }
+            else if(secondNumber>firstNumber && secondNumber>thirdNumber){
+                document.getElementById("result").innerHTML = "Number2 that is "+ secondNumber+" greater than " + firstNumber + "and " + thirdNumber;
+
+            }
+            else if(secondNumber==firstNumber && secondNumber==thirdNumber){
+                document.getElementById("result").innerHTML = "All Numbers are same ";
+
+            }
+            else{
+                document.getElementById("result").innerHTML = "Number3 that is "+ thirdNumber+" greater than " + firstNumber + " and " + secondNumber;
+
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

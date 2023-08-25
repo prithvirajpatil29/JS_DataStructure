@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signed or Unsigned</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body{
+            background-image: linear-gradient(to bottom right, #FF512F, #DD2476);
+            height: 100vh;
+        }
+        .signed{
+
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Check a number is even or odd.</h1>
+    </center>
+    <hr>
+    <div class="evenorodd">
+       <label for="">Enter Number</label> <input type="text" id="num" placeholder="Enter number">
+       <button onclick="calc()" >Submit</button>
+       <input type="text" id="result">
+    </div>
+
+    <script>
+        function calc()
+        {
+            let num = Number(document.getElementById("num").value);
+            if(num % 2 == 0)
+            {
+                document.getElementById("result").value = "It's a even number";
+            }
+            else{
+                document.getElementById("result").value = "Its a odd number";
+            }
+        }
+    </script>
+
+</body>
+</html>

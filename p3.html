@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body{
+            background: url(assets/images/image1.jpeg) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Check whether the year is leap or not.</h1>
+</center>
+<hr>
+<div class="year">
+    <h3>Enter the year</h3>
+    <input type="text" name="" id="year" required> <br>
+    <button onclick="leapyear()">CHECK</button>
+    <h3 id="result"></h3>
+</div>
+    <script>
+        function leapyear()
+        {
+        let year = Number(document.getElementById("year").value);
+
+        if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        {
+            document.getElementById("result").innerHTML = "It's a leap year";
+            
+        }
+        else{
+            document.getElementById("result").innerHTML = "It's not a leap year";
+
+        }
+
+        }
+    </script>
+
+</body>
+</html>
