@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number</title>
+</head>
+<body>
+    <script>
+        let counts;
+        let rem;
+        let sum = 0;
+        let n = 407;
+        let num = n;
+        while(n>0)
+    {
+        n = n/10;
+        counts++;
+    }
+    n = num;
+    while(num>0)
+    {
+     rem = num%10;
+     num = num/10;
+     sum = sum + rem**counts;
+    }
+    document.write(sum);
+    </script>
+</body>
+</html>

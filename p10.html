@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vowel or Consonant Checker</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <style>
+        body{
+            background-color: #07085B;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Vowel or Consonant Checker</h1>
+    </center>
+    <div class="vowel">
+        
+        <label for="charInput">Enter a character:</label>
+        <input type="text" id="charInput">
+        <button onclick="checkCharacter()">Check</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function checkCharacter() {
+            const charInput = document.getElementById('charInput').value.toLowerCase();
+        
+            if (charInput.length !== 1) {
+                document.getElementById('result').textContent = 'Please enter a single character.';
+                return;
+            }
+        
+            const vowels = ['a', 'e', 'i', 'o', 'u'];
+        
+            if (vowels.includes(charInput)) {
+                document.getElementById('result').textContent = 'It\'s a vowel.';
+            } else {
+                document.getElementById('result').textContent = 'It\'s a consonant.';
+            }
+        }
+        
+    </script>
+</body>
+</html>

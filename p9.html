@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alphabet Checker</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background: url(assets/images/image4.webp) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            color: white;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="char">
+        <h2>Alphabet Checker</h2>
+        <label for="character">Enter a character: </label>
+        <input type="text" id="character" placeholder="Enter Character" maxlength="1"><br><br>
+        <button onclick="checkAlphabet()">Check</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAlphabet() {
+            const character = document.getElementById('character').value;
+            const regex = /[a-zA-Z]/;
+
+            if (regex.test(character)) {
+                document.getElementById('result').textContent = `'${character}' is an alphabet.`;
+            } else {
+                document.getElementById('result').textContent = `'${character}' is not an alphabet.`;
+            }
+        }
+    </script>
+</body>
+</html>
