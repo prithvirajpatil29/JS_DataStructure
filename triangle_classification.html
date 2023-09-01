@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Triangle Classification</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+    <style>
+        body {
+            font-family: cursive;
+            margin-top: 30px;
+            background: url(assets/images/triangle.avif) no-repeat center;
+            background-size: contain;
+            height: 500px;
+            color: white;
+            background-color: #A432D1;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="triangle">
+        <h2>Triangle Classification</h2>
+        <label for="side1">Side 1: </label>
+        <input type="number" id="side1"><br><br>
+
+        <label for="side2">Side 2: </label>
+        <input type="number" id="side2"><br><br>
+
+        <label for="side3">Side 3: </label>
+        <input type="number" id="side3"><br><br>
+
+        <button onclick="classifyTriangle()">Classify</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function classifyTriangle() {
+            const side1 = Number(document.getElementById('side1').value);
+            const side2 = Number(document.getElementById('side2').value);
+            const side3 = Number(document.getElementById('side3').value);
+
+            if (side1 === side2 && side2 === side3) {
+                document.getElementById('result').innerHTML = "It's an Equilateral Triangle.";
+            } else if (side1 === side2 || side1 === side3 || side2 === side3) {
+                document.getElementById('result').innerHTML = "It's an Isosceles Triangle.";
+            } else {
+                document.getElementById('result').innerHTML = "It's a Scalene Triangle.";
+            }
+        }
+    </script>
+</body>
+</html>

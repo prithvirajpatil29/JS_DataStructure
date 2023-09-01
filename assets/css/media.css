@@ -1,0 +1,11 @@
+@media(max-width:768px) {
+    .armstrong{
+        width: 200px;
+    }
+    .signed{
+        width: 200px;
+    }
+    .evenorodd{
+        width: 200px;
+    }
+}

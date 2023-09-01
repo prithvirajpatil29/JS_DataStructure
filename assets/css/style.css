@@ -189,4 +189,124 @@ background-color: #FA9E01;
     padding: 10px 20px;
     text-align: center;
 }
+/* p8.html */
+#triangle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 350px;
+    padding: 30px;
+    box-shadow: 1px 1px 3px 1px rgb(209, 201, 201);
+}
+#triangle>input{
+    padding: 10px 20px;
+}
+#triangle>button{
+    padding: 10px 40px;
+}
 
+/* p9.html */
+.char{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-57%);
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 3px 1px rgb(228, 223, 223);
+}
+.char>input{
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+.char>button{
+    padding: 10px 25px;
+    border: 0px solid ;
+    border-radius: 5px;
+    transition: 1s;
+}
+.char>button:hover{
+    background-color: #37D867;
+    color: white;
+}
+
+.vowel{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    box-shadow: 1px 1px 3px 1px rgb(231, 223, 223);
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    margin-left: 35%;
+    margin-top: 20px;
+}
+.vowel>input{
+    margin: 10px;
+    padding: 10px 20px;
+    text-align: center;
+}
+.vowel>button{
+    margin: 10px;
+    padding: 10px 45px;
+    border: 0px solid ;
+    border-radius: 5px;
+    transition: 1s;
+}
+.vowel>button{
+    background-color: #37D867;
+    color: white;
+}
+
+.armstrong{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-49%,-48%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 1px 1px 3px 1px rgb(222, 219, 215);
+    padding: 50px;
+    height: 200px;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+}
+.armstrong>label{
+    font-size: 20px;
+    font-weight:bold ;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.armstrong>input{
+    height: 30px;
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2px;
+}
+.armstrong>input:hover{
+    border: 2px solid #37D867;
+}
+.armstrong>button{
+    padding: 10px 30px;
+    border: 0px solid transparent;
+    border-radius: 5px;
+    background-color: #5b1ae6;
+    color: white;
+    transition: 1s;
+}
+.armstrong>button:hover{
+    background-color: #37D867;
+}

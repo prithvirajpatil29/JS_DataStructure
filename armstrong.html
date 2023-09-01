@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+    <style>
+        body{
+            background: url(../);
+            background-color: #253776;
+            color: white;
+        }
+        h2{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h2>Check Given Number is Armstrong Number or not.</h2>
+</center>
+<hr>
+    <div class="armstrong">
+        <label for="">Enter Number</label> <input type="text" id="number">
+        <button onclick="armstrong()">Armstrong ?</button>
+        <input type="text" id="result">
+    </div>
+    
+    <script>
+        function armstrong() {
+            let n = Number(document.getElementById("number").value);
+            let num = n;
+            let sum = 0;
+            let counts = 0;
+            
+            let temp = n;
+            while (temp > 0) {
+                temp = Math.floor(temp / 10);
+                counts++;
+            }
+            
+            temp = num;
+            while (temp > 0) {
+                let digit = temp % 10;
+                sum += Math.pow(digit, counts);
+                temp = Math.floor(temp / 10);
+            }
+            
+            if (sum === n) {
+                document.getElementById("result").value = "Armstrong number!";
+            } else {
+                document.getElementById("result").value = "Not an Armstrong number.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signed or Unsigned</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css">
     <style>
         body{
-            background-image: linear-gradient(to bottom right, #FF512F, #DD2476);
-            height: 100vh;
+            background: linear-gradient(to bottom, #ffcc00, #ff6600 );
+            background: linear-gradient(to right, #ffcc00, #ff6600);
+
         }
         .signed{
+            background: radial-gradient(circle, #9E0095, #F500C0);
 
         }
     </style>
 </head>
 <body>
     <center>
-    <h1>Check a number is even or odd.</h1>
+    <h1>Signed or Unsigned Number</h1>
     </center>
     <hr>
-    <div class="evenorodd">
+    <div class="signed">
        <label for="">Enter Number</label> <input type="text" id="num" placeholder="Enter number">
        <button onclick="calc()" >Submit</button>
        <input type="text" id="result">
@@ -30,12 +33,12 @@
         function calc()
         {
             let num = Number(document.getElementById("num").value);
-            if(num % 2 == 0)
+            if(num >= 0)
             {
-                document.getElementById("result").value = "It's a even number";
+                document.getElementById("result").value = "It's a signed number";
             }
             else{
-                document.getElementById("result").value = "Its a odd number";
+                document.getElementById("result").value = "Its a unsigned number";
             }
         }
     </script>
