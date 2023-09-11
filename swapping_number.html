@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swapping</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            background: url(assets/images/imag6.webp) ;
+            height: 100vh;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            padding: 20px 50px;
+            position: absolute;
+            align-items: center;
+            justify-content: space-between;
+            height: 400px;
+            color: white;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 1px 1px 3px 1px rgb(223, 218, 218);
+        }
+        .container>input{
+            padding: 10px 20px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+        .box>.container>button{
+            width: 100%;
+            padding: 10px 0px;
+            border-radius: 5px;
+            border: 0px solid black;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .box>.container>button:hover{
+            background-color: #6AE792;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <div class="container">
+        <h2>Swap the Number</h2>
+        <label for="num1">Enter Number 1</label>
+        <input type="text" id="num1" placeholder="Enter Number 1">
+        <label for="num2">Enter Number 2</label>
+        <input type="text" id="num2" placeholder="Enter Number 2">
+        <label for="">Swapped Number 1</label>
+        <input type="text" id="resnum1" placeholder="Swapped Number1" readonly>
+        <label for="">Swapped Number 2</label>
+        <input type="text" id="resnum2" placeholder="Swapped Number1" readonly>
+        <button onclick="swapNumber()">Swap Number</button>
+        <h3 id="result"></h3>
+    </div>
+    </div>
+    <script>
+            function swapNumber(){
+                let num1 = document.getElementById("num1").value;
+                let num2 = document.getElementById("num2").value;
+                let regexNumber = /^[0-9]+$/;
+            
+                if(num1 === "" || num2 === ""){
+                    document.getElementById("result").innerHTML = "Please enter number";
+                }
+                else if(!regexNumber.test(num1) || !regexNumber.test(num2)){
+                    document.getElementById("result").innerHTML = "Enter valid numbers";
+                }
+                else{
+                    num1 = Number(num1);
+                    num2 = Number(num2);
+                    num2 = num1 + num2;
+                    num1 = num2 - num1;
+                    num2 = num2 - num1;
+                    document.getElementById("resnum1").value =   num1;
+                    document.getElementById("resnum2").value =   num2;
+
+                }
+            }
+    </script>
+</body>
+</html>
