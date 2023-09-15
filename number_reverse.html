@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Reverse</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        center{
+            padding: 20px;
+            color: white;
+            background-color: #3678C2;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-49%,-50%);
+            background: url(assets/images/image3.jpeg) no-repeat center;
+            background-size: cover;
+            padding: 50px;
+            color: white;
+        }
+        .container>input{
+            padding: 10px 20px;
+            outline: 0px solid;
+            margin-bottom: 15px;
+            border-radius: 10px 20px;
+
+        }
+        .container>button{
+            width: 100%;
+            padding: 10px 0px;
+            border-radius: 10px 20px;
+            border: 0px solid;
+            cursor: pointer;
+            background-color: #3678C2;
+            color: white;
+            transition: 0.5s;
+        }
+        .container>button:hover{
+            background-color: #3EB750;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Reverse a Number</h1>
+    </center>
+    <div class="container">
+        <input type="number" placeholder="enter number" id="number">
+        <button onclick="reverse()">Reverse Number</button>
+        <h3 id="result"></h3>
+    </div>
+        <script>
+        function reverse(){
+        let number = Number(document.getElementById("number").value);
+
+        //document.write(number);
+        var rever = 0;
+        while(number > 0){
+            var digit = number % 10;
+            rever =rever * 10 + digit;
+            number =Math.floor( number / 10);
+        }
+        document.getElementById("result").innerHTML = rever;
+    }
+    </script>
+</body>
+</html>

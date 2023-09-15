@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facotrial</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            border: 1px solid black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        form>input[type="number"]{
+            border: 0px solid;
+            border-bottom: 1px solid black;
+            margin-bottom: 20px;
+            outline: 0px solid;
+            padding: 10px 20px;
+
+        }
+        form>input[type="submit"]{
+            border: 0px solid black;
+            outline: 0px solid;
+            width: 100%;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #52BCD3;
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" onsubmit="factorial(event)">
+        <h3>Factorial Number</h3>
+        <input type="number" placeholder="enter number" id="number">
+        <input type="submit">
+        <h3 id="result"></h3>
+    </form>
+    <script>
+        function factorial(event){
+        event.preventDefault();
+        let num = Number(document.getElementById("number").value); 
+        let fact = 1;
+        let j;
+        for(j=1;j<=num;j++){
+            fact = fact;
+            fact = fact * j;
+        }
+        document.getElementById("result").innerHTML = fact;
+        }
+    </script>
+</body>
+</html>

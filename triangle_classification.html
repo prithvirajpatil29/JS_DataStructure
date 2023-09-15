@@ -14,21 +14,19 @@
             color: white;
             background-color: #A432D1;
         }
-
-        
     </style>
 </head>
 <body>
     <div id="triangle">
         <h2>Triangle Classification</h2>
-        <label for="side1">Side 1: </label>
-        <input type="number" id="side1"><br><br>
+        <label for="angle1">Angle 1: </label>
+        <input type="number" id="angle1"><br><br>
 
-        <label for="side2">Side 2: </label>
-        <input type="number" id="side2"><br><br>
+        <label for="angle2">Angle 2: </label>
+        <input type="number" id="angle2"><br><br>
 
-        <label for="side3">Side 3: </label>
-        <input type="number" id="side3"><br><br>
+        <label for="angle3">Angle 3: </label>
+        <input type="number" id="angle3"><br><br>
 
         <button onclick="classifyTriangle()">Classify</button>
 
@@ -37,16 +35,33 @@
 
     <script>
         function classifyTriangle() {
-            const side1 = Number(document.getElementById('side1').value);
-            const side2 = Number(document.getElementById('side2').value);
-            const side3 = Number(document.getElementById('side3').value);
+            const angle1 = Number(document.getElementById('angle1').value);
+            const angle2 = Number(document.getElementById('angle2').value);
+            const angle3 = Number(document.getElementById('angle3').value);
 
-            if (side1 === side2 && side2 === side3) {
-                document.getElementById('result').innerHTML = "It's an Equilateral Triangle.";
-            } else if (side1 === side2 || side1 === side3 || side2 === side3) {
-                document.getElementById('result').innerHTML = "It's an Isosceles Triangle.";
+            let angleType = '';
+            if (angle1 + angle2 + angle3 === 180) {
+                if (angle1 < 90 && angle2 < 90 && angle3 < 90) {
+                    angleType = 'Acute';
+                } else if (angle1 === 90 || angle2 === 90 || angle3 === 90) {
+                    angleType = 'Right-Angled';
+                } else {
+                    angleType = 'Obtuse';
+                }
+
+                let sideType = '';
+                if (angle1 === angle2 && angle2 === angle3) {
+                    sideType = 'Equilateral';
+                } else if (angle1 === angle2 || angle1 === angle3 || angle2 === angle3) {
+                    sideType = 'Isosceles';
+                } else {
+                    sideType = 'Scalene';
+                }
+
+                const result = `It's an ${angleType} ${sideType} Triangle.`;
+                document.getElementById('result').innerHTML = result;
             } else {
-                document.getElementById('result').innerHTML = "It's a Scalene Triangle.";
+                document.getElementById('result').innerHTML = "Invalid angles. Please make sure the angles sum up to 180 degrees.";
             }
         }
     </script>
